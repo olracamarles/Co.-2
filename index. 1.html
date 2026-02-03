@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SDIHS -  Math game</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f7f1;
+}
+
+/* HEADER */
+header {
+    background-color: skyblue;
+    padding: 15px;
+    text-align: center;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+/* TOP NAVIGATION */
+ul.nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: cyan;
+    justify-content: center;
+}
+
+ul.nav li a {
+    color: #3a3a3a;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* HOVER BAR */
+ul.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    background-color: #4a4a4a;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+ul.nav li a:hover {
+    color: #000;
+}
+
+ul.nav li a:hover::after,
+ul.nav li a.active::after {
+    width: 70%;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    min-height: 350px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 30%;
+    background-color: skyblue;
+    padding: 20px;
+    color: #4a4a4a;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #5a574f;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #cfc8be;
+    color: #2c2b28;
+}
+
+/* CONTENT */
+article {
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    color: #4a4a4a;
+    border-left: 4px solid #b8b0a9;
+}
+
+/* FOOTER */
+footer {
+    background-color: cyan;
+    color: #3a3a3a;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar, article {
+        width: 100%;
+        border-left: none;
+        border-top: 4px solid #b8b0a9;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>SDIHS</h2>
+    <h3 style="font-weight: normal; font-size: 16px;">
+        Santo Domingo Integrated High School
+    </h3>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+    <li><a href="http://127.0.0.1:20664/main/0/storage/emulated/0/HOME.%201.html" class="active" onclick="loadContent('home')">Home</a></li>
+    <li><a href="http://127.0.0.1:20664/main/0/storage/emulated/0/activity.%205.html" onclick="loadContent('first')">First Quarter</a></li>
+    <li><a href="#" onclick="loadContent('second')">Second Quarter</a></li>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="http://127.0.0.1:20664/main/0/storage/emulated/0/co%200.2.html" onclick="loadContent('content')">Content</a></li>
+            <li><a href="http://127.0.0.1:20664/main/0/storage/emulated/0/objective.1.0.html" onclick="loadContent('objectives')">Objectives</a></li>
+            <li><a href="http://127.0.0.1:20664/main/0/storage/emulated/0/Lagel%20basis.1.html" onclick="loadContent('legal')">Legal Basis</a></li>
+            <li><a href="http://127.0.0.1:20664/main/0/storage/emulated/0/Reference.%201.html" onclick="loadContent('reference')">Reference</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENT AREA -->
+    <article id="content">
+        <h2>Content</h2>
+        <p>
+            ICT stands for Information and Communication Technology, which refers to the technologies used to store, retrieve, transmit, and manipulate information.
+        </p>
+        <p>
+            The website offers simple tips, calming messages, and supportive content to help
+            students take care of their mental wellness.
+        </p>
+        <p>
+            A place built by students, for students—where calm thoughts, helpful advice,
+            and uplifting messages come together.
+        </p>
+        <p>
+            Explore stories, tips, and reminders that help you stay grounded, hopeful,
+            and mentally strong.
+        </p>
+    </article>
+
+</div>
+
+<footer>
+    <p>© Fourth Year Students Batch 2025–2026</p>
+</footer>
+
+<script>
+function loadContent(section) {
+    const content = document.getElementById("content");
+
+    if (section === "content") {
+        content.innerHTML = `
+            <h2>Content</h2>
+            <p>The Safe Mind Project is a student-created space that encourages positivity, emotional wellness, and kindness for everyone.</p>
+            <p>The website offers simple tips, calming messages, and supportive content to help students take care of their mental wellness.</p>
+            <p>A place built by students, for students—where calm thoughts, helpful advice, and uplifting messages come together.</p>
+            <p>Explore stories, tips, and reminders that help you stay grounded, hopeful, and mentally strong.</p>
+        `;
+    }
+    else if (section === "objectives") {
+        content.innerHTML = `
+            <h2>Objectives</h2>
+            <ol>
+
+ <p>
+        The objective of this activity is to  teach you about the history of ICT and inform you the advantage and disadvantaged of ICT. .
+    </p>
+                <li>To design and develop The Safe Mind Project website promoting mental wellness.</li>
+                <li>To encourage positive mental health awareness among students.</li>
+                <li>To apply ICT skills in creating an enga
